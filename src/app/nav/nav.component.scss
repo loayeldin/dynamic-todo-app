@@ -1,0 +1,90 @@
+.navbar-brand
+{
+    font-size: 28px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+// .has-gradient-text {
+//     background: -webkit-linear-gradient(#13f7f4, #2af598);
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+// }
+.btn-nav{
+    background: rgba(150,232,165,.7);
+    padding: 8px 15px;
+    color: white;
+    text-transform: capitalize;
+    
+}
+.navbar-brand
+{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+fa-icon
+{
+    font-size: 17px;
+    cursor: pointer;
+}
+.nav-header
+{
+    padding: 20px;
+    background-color: rgb(52,58,64);
+    color: white;
+}
+.nav-header h3
+{
+font-weight: bold;
+color: white;
+}
+.board-bar
+{
+    color: white;
+    position: relative;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+.board-bar:hover
+{
+    color: green;
+    background-color: white;
+    position: relative;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.board-bar:focus
+{
+    color: green;
+    background-color: white;
+    position: relative;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.board-name
+{
+    font-size: 19px;
+}
+.board-bar::before
+{
+    content: "";
+    width: 3px;
+    border-radius: 20px;
+    height: 16px;
+    position: absolute;
+    left: 2%;
+    top: 39%;
+    background-color: green;;
+
+}
+.faTrash, .faPenToSquares
+{
+    transition: .2s all ease-in-out;
+}
+.faTrash:hover, .faPenToSquares:hover
+{
+   
+    font-size: 22px;
+
+}

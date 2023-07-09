@@ -1,0 +1,204 @@
+
+
+
+  <div class="nav-header">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="text-capitalize">todo app</h3>
+      </div>
+  
+      
+    </div>
+  </div>
+
+
+
+
+
+<!-- 
+  <ul class="nav nav-tabs board">
+    <li class="nav-item board-bar" *ngFor=" let board of boards; let x= index" (click)="getindex(x)">
+     <div class="d-flex justify-content-between align-items-center">
+
+      <a class="nav-link active board-name" >
+        {{board.name}}   
+        <fa-icon [icon]="faTrash"  class="ml-3 board-style-icons"  (click)="deleteBoard(x)"></fa-icon>
+        <fa-icon [icon]="faPenToSquare" class="ml-3  board-style-icons" data-toggle="modal" data-target="#exampleModal3" (click)="editBoardName(x)"></fa-icon>
+      
+      
+      </a>
+    
+     </div>
+    </li>
+    
+  </ul> -->
+
+
+  <div class="board-bar" *ngFor=" let board of boards; let x= index" (click)="getindex(x)">
+    <div class="d-flex justify-content-between align-items-center p-3">
+      <div class="board-name">
+          {{board.name}}  
+        </div>
+
+
+      <div class="board-icons">        
+        <fa-icon [icon]="faTrash"  class="ml-3 board-style-icons faTrash"  (click)="deleteBoard(x)"></fa-icon>
+        <fa-icon [icon]="faPenToSquare" class="ml-3 board-style-icon faPenToSquares" data-toggle="modal" data-target="#exampleModal3" (click)="editBoardName(x)"></fa-icon>
+      </div>
+
+     
+    
+     </div>
+  </div>
+
+
+  <div class=" mt-3 ml-2">
+    <button type="button" class="btn btn-success " data-toggle="modal" data-target="#exampleModal">create board <fa-icon [icon]="faPlus"></fa-icon></button>
+
+  </div>
+  <!-- Button trigger modal -->
+
+
+<!-- new board Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-capitalize" id="exampleModalLabel">create new board</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <form [formGroup]="boardForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="exampleInputEmail1">board name</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="exampleInputEmail1" 
+              aria-describedby="emailHelp"
+              formControlName="name"
+              required
+              >
+              <div *ngIf="boardForm.get('name')?.invalid== true && boardForm.get('name')?.touched == true" class="alert alert-danger text-capitalize" role="alert">
+               <fa-icon [icon]="faExclamationCircle"></fa-icon> Board Name required
+              </div>
+          </div>
+         
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">task category</label>
+            <input
+             type="text" 
+             class="form-control" 
+             id="exampleInputPassword1"
+             formControlName="category"
+             required
+  
+             >
+
+             <div *ngIf="boardForm.get('category')?.invalid== true && boardForm.get('category')?.touched == true" class="alert alert-danger text-capitalize" role="alert">
+              <fa-icon [icon]="faExclamationCircle"></fa-icon> Category Required
+             </div>
+          </div>
+
+          <div class="form-group" formArrayName="tasks">
+            
+          
+
+            <div >
+               <label for="exampleInputPassword1" class="mt-2">tasks</label>
+            <div class="div mt-2" 
+          
+            *ngFor="let taskCrtl of tasks.controls; let i=index"
+            [formGroupName]="i"
+            >
+
+            <div class="d-flex justify-content-between">
+                
+              <input 
+                type="text" 
+                class="form-control" 
+                id="exampleInputPassword1" 
+                formControlName="task"
+                >
+                <button class="btn btn-danger" (click)="deleteTask(i)">X</button>
+            </div>
+
+            
+               
+            </div>
+
+            </div>
+          </div>
+
+          <button class="btn btn-success" type="button" (click)="addTask()" > add task</button>
+        
+        
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" (click)="close()" >Close</button>
+            <button type="submit" class="btn btn-success"   [disabled]="!boardForm.valid">Add Board</button>
+          </div>
+        </form>
+
+
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- edit board name Modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-capitalize" id="exampleModalLabel5">Board Name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+        <form [formGroup]="boardName" (ngSubmit)="onSubmitEditName()">
+          <div class="form-group">
+            <label for="exampleInputEmail1 text-capitalize">Edit Name</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="exampleInputEmail1" 
+              aria-describedby="emailHelp"
+              formControlName="name"
+              required
+              >
+           
+          </div>
+
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" >Close</button>
+            <button type="submit" class="btn btn-success"   >Update</button>
+          </div>
+
+        </form>
+
+
+
+
+
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+

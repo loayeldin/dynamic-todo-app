@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+
+// global styles and changing bulma variables
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Lato:400,800,900');
+
+$family-sans-serif: "Nunito", sans-serif;
+
+// Update some of Bulma's component variables
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+/* GLOBAL STYLES */
+html, body {
+    max-height: 100%;
+}
+
+body {
+    background-image: url('./assets/background.svg');
+    background-size: cover;
+
+    overflow-y: hidden !important;
+  
+
+}
+
+.mouse-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    visibility: hidden;
+  }
+  
+  .cursor-inner {
+    width: 6px;
+    height: 6px;
+    z-index: 10000001;
+    background-color: #12c2e9;
+    -webkit-transition: width .3s ease-in-out,
+   height .3s ease-in-out,
+   margin .3s ease-in-out,
+   opacity .3s ease-in-out;
+    -o-transition: width .3s ease-in-out,
+   height .3s ease-in-out,
+   margin .3s ease-in-out,
+   opacity .3s ease-in-out;
+    transition: width .3s ease-in-out,
+   height .3s ease-in-out,
+   margin .3s ease-in-out,
+   opacity .3s ease-in-out;
+  }
+  
+  .cursor-inner.cursor-hover {
+    margin-left: -35px;
+    margin-top: -35px;
+    width: 70px;
+    height: 70px;
+    background-color: #12c2e9;
+    opacity: .3;
+  }
+  
+  .cursor-outer {
+    margin-left: -12px;
+    margin-top: -12px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #12c2e9;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 10000000;
+    opacity: .5;
+    -webkit-transition: all .08s ease-out;
+    -o-transition: all .08s ease-out;
+    transition: all .08s ease-out;
+  }
+  
+  .cursor-outer.cursor-hover {
+    opacity: 0;
+  }
+  

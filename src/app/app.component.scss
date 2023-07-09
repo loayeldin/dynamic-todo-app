@@ -1,0 +1,18 @@
+.sidebar
+{
+    width: 280px;
+    height: 100vh !important;
+    
+    background-color: white;
+    float: left;
+    background-color: rgb(52,58,64);
+   
+}
+.main
+{
+    float: right;
+    width: calc(100% - 280px); /* Subtract the width of the sidebar */
+    overflow: scroll;
+    height: 990px;
+  
+}
