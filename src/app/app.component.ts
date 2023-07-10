@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { faBars} from '@fortawesome/free-solid-svg-icons'
+
 declare var $: any;
 
 @Component({
@@ -7,18 +9,20 @@ declare var $: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent  implements OnInit,  AfterViewInit{
-
+  isSidebarHidden = true;
+  faBars=faBars
+  toggleSidebar() {
+    this.isSidebarHidden = !this.isSidebarHidden;
+ 
+  
+  }
   ngAfterViewInit(){
-  //   $(document).ready( function() {
-  //     alert('Drag and Drop items');
-  // });
+
   }
 
 
   ngOnInit() {
-  //   $(document).ready( function() {
-  //     alert('Drag and Drop items');
-  // });
+ 
   }
 
 

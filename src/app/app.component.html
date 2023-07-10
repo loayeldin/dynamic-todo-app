@@ -1,11 +1,15 @@
-
-   <div class="sidebar">
-    <app-nav></app-nav>
-
+<div class="sidebar" [ngClass]="{'sidebar-closed': isSidebarHidden}">
+   <app-nav></app-nav>
    
-   </div>
+ </div>
 
+ <div id="main" class="">
+   
+ <div class="menu-icon pt-5" (click)="toggleSidebar()">
+   <!-- Add your menu icon markup here -->
+   <fa-icon [icon]="faBars" class="ml-3  faBars"  ></fa-icon>
+ </div>
 
-   <div class="main">
-    <router-outlet></router-outlet>
-   </div>
+   <router-outlet></router-outlet>
+ </div>
+ 

@@ -3,16 +3,43 @@
     width: 280px;
     height: 100vh !important;
     
-    background-color: white;
+  
     float: left;
-    background-color: rgb(52,58,64);
+    background-color: rgb(26,26,26);
+    transition: .8s all ease-in-out;
+    overflow: visible;
+    opacity: 1;
    
 }
-.main
+.sidebar-closed
+{ transition: .8s all ease-in-out;
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+.main-with-menu
 {
     float: right;
     width: calc(100% - 280px); /* Subtract the width of the sidebar */
-    overflow: scroll;
-    height: 990px;
+ 
   
 }
+#main
+{
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+.faBars
+{
+    color: black;
+    font-size: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: white;
+   
+    border-radius: 50%;
+    padding: 15px;
+}
+

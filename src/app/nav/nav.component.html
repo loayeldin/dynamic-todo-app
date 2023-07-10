@@ -15,23 +15,7 @@
 
 
 
-<!-- 
-  <ul class="nav nav-tabs board">
-    <li class="nav-item board-bar" *ngFor=" let board of boards; let x= index" (click)="getindex(x)">
-     <div class="d-flex justify-content-between align-items-center">
 
-      <a class="nav-link active board-name" >
-        {{board.name}}   
-        <fa-icon [icon]="faTrash"  class="ml-3 board-style-icons"  (click)="deleteBoard(x)"></fa-icon>
-        <fa-icon [icon]="faPenToSquare" class="ml-3  board-style-icons" data-toggle="modal" data-target="#exampleModal3" (click)="editBoardName(x)"></fa-icon>
-      
-      
-      </a>
-    
-     </div>
-    </li>
-    
-  </ul> -->
 
 
   <div class="board-bar" *ngFor=" let board of boards; let x= index" (click)="getindex(x)">

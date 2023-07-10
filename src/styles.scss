@@ -20,8 +20,8 @@ html, body {
 body {
     background-image: url('./assets/background.svg');
     background-size: cover;
-
-    overflow-y: hidden !important;
+background-repeat: no-repeat;
+    overflow: hidden !important;
   
 
 }
