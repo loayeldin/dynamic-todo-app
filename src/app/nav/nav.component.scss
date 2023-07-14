@@ -55,6 +55,8 @@ color: white;
     margin: 10px;
     border-radius: 10px;
     cursor: pointer;
+    transform: translateX(5px); /* Apply a horizontal translation on hover */
+
 }
 .board-bar:focus
 {
@@ -81,6 +83,9 @@ color: white;
     background-color: green;;
 
 }
+
+
+  
 .faTrash, .faPenToSquares
 {
     transition: .2s all ease-in-out;
