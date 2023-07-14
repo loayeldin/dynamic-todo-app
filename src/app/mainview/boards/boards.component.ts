@@ -25,7 +25,6 @@ export class BoardsComponent implements OnInit  {
 
     constructor(private boardService:BoardService){}
   ngOnInit() {
-
      this.boardService.selectedBoardIndex.subscribe(data=>{this.selectedBoardIndex=data})
     
       // $('#exampleModal1').modal({
@@ -41,6 +40,10 @@ export class BoardsComponent implements OnInit  {
       //  console.log("helloooo")
       // })
     
+  }
+  ngAfterViewInit(){
+    window.alert('you can drag and drop Items')
+
   }
   addCategory:FormGroup = new FormGroup(
     { 
