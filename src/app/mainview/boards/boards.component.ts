@@ -42,7 +42,7 @@ export class BoardsComponent implements OnInit  {
     
   }
   ngAfterViewInit(){
-    window.alert('you can drag and drop Items')
+
 
   }
   addCategory:FormGroup = new FormGroup(
@@ -176,6 +176,7 @@ export class BoardsComponent implements OnInit  {
   {
     (<FormArray>this.addCategory.get('tasks')).removeAt(id)
   }
+
 
 
 //////////////////////////////////////////////////////////////
